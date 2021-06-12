@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+<body>
+    <button><a href="https://dang-pig.github.io/Somemathproblem.dangheo.com/">Home</a></button>
+    <fieldset>
+        <legend>Tính diện tích và chu vi</legend>
+        Nhập chiều dài: <input id="lenght" type="number" placeholder="Số do chiều dài" style="margin-bottom: 10px"><br>
+        Nhập chiều rộng: <input id="width" type="number" placeholder="Số do chiều rộng" style="margin-bottom: 10px"><br>
+        <button style="margin-bottom: 10px;" onclick="timS()">Tìm diện tích!</button><br>
+        <button onclick="timP()">Tìm chu vi!</button>
+        <p id="S">Diện tích hình chữ nhật là: </p>
+        <p id="P">Chu vi hình chữ nhật là:  </p>
+    </fieldset>
+    <script>
+        function timP()
+        {
+            let dai=document.getElementById("lenght").value
+            let rong=document.getElementById("width").value
+            document.getElementById("P").innerText="Chu vi hình chữ nhật là: " + [Number(dai)+Number(rong)]*2
+        }
+
+        function timS()
+        {
+            let dai1=document.getElementById("lenght").value
+            let rong1=document.getElementById("width").value
+            document.getElementById("S").innerText="Diện tích hình chữ nhật là: " + (dai1*rong1)
+        }
+    </script>
+</body>
+</html>
