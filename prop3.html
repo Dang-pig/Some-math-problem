@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 3</title>
+</head>
+<body>
+    <fieldset>
+    <legend>Xem năm bạn nhập có phải năm nhuận không?</legend>
+    <button><a href="https://dang-pig.github.io/Somemathproblem.dangpig.com/">Home</a></button>
+    Nhập số năm: <input id="year" oninput="namnhuan()" type="number"><br>
+    <p id="change">.</p>
+    <script>
+        function namnhuan()
+        {
+            let year = document.getElementById("year").value
+            if (year % 4 == 0)
+            {
+                document.getElementById("change").innerText= "Đó là năm nhuận!"
+            }
+            else
+            {
+                document.getElementById("change").innerText= "Đó không phải năm nhuận!"
+            }
+        }
+    </script>
+    </fieldset>
+</body>
+</html>
