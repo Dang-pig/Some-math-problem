@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+</head>
+<body>
+    <button><a href="https://dang-pig.github.io/Somemathproblem.dangpig.com/">Home</a></button><br>
+    <fieldset>
+        <legend>Tìm BCNN và ƯCLN của 2 số</legend>
+
+        Nhập số thứ nhất: <input id="ax" type="number" placeholder="Số thứ nhất" style="margin-bottom: 10px;"><br>
+        Nhập số thứ hai: <input id="bx" type="number" placeholder="Số thứ hai" style="margin-bottom: 10px;"><br>
+        <button  style="margin-bottom: 10px ;" onclick="BCNN()">Tìm BCNN</button><br>
+        <button  style="margin-bottom: 10px ;" onclick="UCLN()">Tìm ƯCNN</button><br>
+        <p id="BCNN">BCNN của hai số đó là: </p><br>
+        <p id="UCLN">ƯCLN của hai số đó là: </p>
+    </fieldset>
+    <script>
+        function BCNN()
+        {
+            let ax = document.getElementById("ax").value
+            let bx = document.getElementById("bx").value
+            let a = ax
+            let b = bx
+            let t = Number(a) % Number(b)
+            while (t>0)
+            {
+             t = a % b
+             a = b
+             b = t
+            }
+            let ucln = a
+            let bcnn = ax * bx / ucln
+            document.getElementById("BCNN").innerText="BCNN của hai số đó là: " + ucln
+        }
+        
+        function UCLN()
+        {
+            let ax = document.getElementById("ax").value
+            let bx = document.getElementById("bx").value
+            let a = ax
+            let b = bx
+            let t = Number(a) % Number(b)
+            while (t>0)
+            {
+             t = a % b
+             a = b
+             b = t
+            }
+            let ucln = a
+            let bcnn = ax * bx / ucln
+            document.getElementById("UCLN").innerText="ƯCLN của hai số đó là: " + bcnn
+        }
+    </script>
+</body>
+</html>
