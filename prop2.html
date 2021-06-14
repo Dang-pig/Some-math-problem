@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+</head>
+<body>
+    <button><a href="https://dang-pig.github.io/Somemathproblem.dangpig.com/">Home</a></button><br>
+    <fieldset>
+        <legend>Tìm BCNN và ƯCLN của 2 số</legend>
+
+        Nhập số thứ nhất: <input id="a1" type="number" placeholder="Số thứ nhất" style="margin-bottom: 10px;"><br>
+        Nhập số thứ hai: <input id="b1" type="number" placeholder="Số thứ hai" style="margin-bottom: 10px;"><br>
+        <button  style="margin-bottom: 10px ;" onclick="BCNN()">Tìm BCNN</button><br>
+        <button  style="margin-bottom: 10px ;" onclick="UCLN()">Tìm ƯCNN</button><br>
+        <p id="BCNN1">BCNN của hai số đó là: </p><br>
+        <p id="UCLN1">ƯCLN của hai số đó là: </p>
+    <script>
+        function BCNN()
+        {
+            let a =  document.getElementById("a1").value
+            let b = document.getElementById("b1").value
+            if(a>b)
+            {
+                let t = Number(a) % Number(b)
+                while (t>0)
+                {
+                t = a % b
+                a = b
+                b = t
+                }
+                let ucln = a
+                let bcnn = document.getElementById("a1").value * document.getElementById("b1").value / ucln
+                document.getElementById("BCNN1").innerText="BCNN của hai số đó là: " + bcnn
+            }
+            else
+            {
+                let t = Number(b) % Number(a)
+                while (t>0)
+                {
+                t = b % a
+                b = a
+                a = t
+                }
+                let ucln = b
+                let bcnn = document.getElementById("a1").value * document.getElementById("b1").value / ucln
+                document.getElementById("BCNN1").innerText="BCNN của hai số đó là: " + bcnn
+            }
+        }
+        
+        function UCLN()
+        {
+            let a =  document.getElementById("a1").value
+            let b = document.getElementById("b1").value
+            if(a>b)
+            {
+                let t = Number(a) % Number(b)
+                while (t>0)
+                {
+                t = a % b
+                a = b
+                b = t
+                }
+                let ucln = a
+                let bcnn = document.getElementById("a1").value * document.getElementById("b1").value / ucln
+                document.getElementById("UCLN1").innerText="ƯCLN của hai số đó là: " + ucln
+            }
+            else
+            {
+                let t = Number(b) % Number(a)
+                while (t>0)
+                {
+                t = b % a
+                b = a
+                a = t
+                }
+                let ucln = b
+                let bcnn = document.getElementById("a1").value * document.getElementById("b1").value / ucln
+                document.getElementById("UCLN1").innerText="ƯCLN của hai số đó là: " + ucln
+            }
+        }
+    </script>
+    </fieldset>
+</body>
+</html>
